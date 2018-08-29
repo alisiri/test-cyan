@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+
+  <body>
+<article id="QUnit-testDone1" class="entry method"><h2 class="section-title"><span class="name">QUnit.testDone( callback )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Register a callback to fire whenever a test ends.</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="QUnit-testDone-callback" href="#QUnit-testDone-callback"><span class="icon-link"></span>QUnit.testDone( callback )</a></h4>
+<ul><li>
+<div><strong>callback</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Function">Function</a>( <a href="http://api.jquery.com/Types#Object">Object</a> details )</div>
+<div>Callback to execute. Provides a single argument with the following properties:</div>
+<ul>
+<li>
+<div><strong>name</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+</div>
+<div>Name of the next test to run</div>
+</li>
+<li>
+<div><strong>module</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+</div>
+<div>Name of the current module</div>
+</li>
+<li>
+<div><strong>failed</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>The number of failed assertions</div>
+</li>
+<li>
+<div><strong>passed</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>The number of passed assertions</div>
+</li>
+<li>
+<div><strong>total</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>The total number of assertions</div>
+</li>
+<li>
+<div><strong>duration</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>The total runtime, including setup and teardown</div>
+</li>
+</ul>
+</li></ul>
+</li></ul>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Register a callback that logs results of a single test</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>QUnit.testDone(<span class="keyword">function</span>( details ) {</code></div></div><div class="container"><div class="line"><code>  console.log( <span class="string">"Finished running: "</span>, details.module, details.name, <span class="string">"Failed/total: "</span>, details.failed, details.total, details.duration );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>

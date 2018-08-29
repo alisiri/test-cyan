@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+
+  <body>
+<article id="stop1" class="entry method"><h2 class="section-title"><span class="name">stop(  [increment ] )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Stop the testrunner to wait for async tests to run. Call <a href="start.html"><code>start()</code></a> to continue.</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="stop-increment" href="#stop-increment"><span class="icon-link"></span>stop(  [increment ] )</a></h4>
+<ul><li>
+<div><strong>increment</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Integer">Integer</a>
+</div>
+<div>Optional argument to merge multiple stop() calls into one. Use with multiple corrsponding start() calls.</div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		<p>When your async test has multiple exit points, call stop() with the increment argument, corresponding to the number of <a href="start.html"><code>start()</code></a> calls you need.</p>
+		<p>On Blackberry 5.0, window.stop is a native read-only function. If you deal with that browser, use <code>QUnit.stop()</code> instead, which will work anywhere.</p>
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">A test that waits 150ms for an async operation to finish, then asserts the result.</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>test( <span class="string">"a test"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  stop();</code></div></div><div class="container"><div class="line"><code>  asyncOp();</code></div></div><div class="container"><div class="line"><code>  setTimeout(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    equals( asyncOp.result, <span class="string">"someExpectedValue"</span> );</code></div></div><div class="container"><div class="line"><code>    start();</code></div></div><div class="container"><div class="line"><code>  }, <span class="number">150</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>

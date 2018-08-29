@@ -1,0 +1,39 @@
+{
+  "name": "frontend-developer-test-1",
+  "version": "1.0.0",
+  "description": "Tapedeck Test",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-qunit": "^0.5.2",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-exec": "^0.4.6",
+    "grunt-qunit-junit": "^0.3.1",
+    "grunt-sass": "2.0.0",
+    "grunt-ts": "^6.0.0-beta.21",
+    "@types/jquery": "^3.3.1",
+    "jquery": "^3.3.1",
+    "typescript": "^2.9.2"
+  },
+  "js": [
+    "tapedeck/tapedeck.js",
+    "bootstrap.js"
+  ],
+  "ts": [
+    "tapedeck/tapedeck.js",
+    "bootstrap.js"
+  ],
+  "lib": [
+    "jquery.js",
+    "tabs.js"
+  ]
+}

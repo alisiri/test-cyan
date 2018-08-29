@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+
+  <body>
+<article id="equal1" class="entry method"><h2 class="section-title"><span class="name">equal( actual, expected, message )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>
+		A non-strict comparison assertion, roughly equivalent to JUnit <code>assertEquals</code>.
+	</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="equal-actual-expected-message" href="#equal-actual-expected-message"><span class="icon-link"></span>equal( actual, expected, message )</a></h4>
+<ul>
+<li>
+<div><strong>actual</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
+</div>
+<div>Expression being tested</div>
+</li>
+<li>
+<div><strong>expected</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
+</div>
+<div>Known comparison value</div>
+</li>
+<li>
+<div><strong>message</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+</div>
+<div>A short description of the assertion</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		<p>The <code>equal</code> assertion uses the simple comparison operator (<code>==</code>) to compare the actual and expected arguments. When they are equal, the assertion passes; otherwise, it fails. When it fails, both actual and expected values are displayed in the test result, in addition to a given message.</p>
+		<p><a href="notEqual.html"><code>notEqual()</code></a> can be used to explicitly test inequality.</p>
+		<p><a href="strictEqual.html"><code>strictEqual()</code></a> can be used to test strict equality.</p>
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">The simplest assertion example:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>test( <span class="string">"a test"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  equal( <span class="number">1</span>, <span class="string">"1"</span>, <span class="string">"String '1' and number 1 have the same value"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">A slightly more thorough set of assertions:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>test( <span class="string">"equal test"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  equal( <span class="number">0</span>, <span class="number">0</span>, <span class="string">"Zero; equal succeeds"</span> );</code></div></div><div class="container"><div class="line"><code>  equal( <span class="string">""</span>, <span class="number">0</span>, <span class="string">"Empty, Zero; equal succeeds"</span> );</code></div></div><div class="container"><div class="line"><code>  equal( <span class="string">""</span>, <span class="string">""</span>, <span class="string">"Empty, Empty; equal succeeds"</span> );</code></div></div><div class="container"><div class="line"><code>  equal( <span class="number">0</span>, <span class="number">0</span>, <span class="string">"Zero, Zero; equal succeeds"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  equal( <span class="string">"three"</span>, <span class="number">3</span>, <span class="string">"Three, 3; equal fails"</span> );</code></div></div><div class="container"><div class="line"><code>  equal( <span class="literal">null</span>, <span class="literal">false</span>, <span class="string">"null, false; equal fails"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Tapedeck Unit Tests</title>
+
+        <link rel="stylesheet" href="../../node_modules/grunt-qunit-junit/test/fixtures/vendor/qunit-1.12.0.css">
+        <link rel="stylesheet" href="../../dist/css/tapedeck.min.css">
+
+
+        <script type="text/javascript" src="../../dist/js/tapedeck-lib.min.js"></script>
+        <script type="text/javascript" src="../../dist/js/tapedeck-ts.min.js"></script>
+        <script type="text/javascript" src="../../dist/js/tapedeck.min.js"></script>
+
+
+        <script type="text/javascript" src="../../node_modules/grunt-qunit-junit/test/fixtures/vendor/qunit-1.12.0.js"></script>
+        <script type="text/javascript" src="../helpers.js"></script>
+        <script type="text/javascript" src="tests.js"></script>
+        <meta name="encoding" charset="utf-8">
+    </head>
+    <body>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <div class="test-content"></div>
+    </body>
+    <script>
+        (function (suite) {
+            window.testSuite = window.testSuite || { moduleWrappers: { }, moduleParams: { } };
+            $container = $(".test-content");
+
+            // This is called at the start of module execution, before the tests are run.
+            // It is where the implementation gets bootstrapped on a tapedeck added to the DOM in its own unique wrapper that the test
+            // module's tests will be run against.
+            //
+            // If you modify bootstrap to return an instance of an object controlling the tapedeck you can append it to suite.moduleParams[id]
+            // and refer to it in your tests as described in tests.js.
+            QUnit.moduleStart(function (params) {
+                var id = params.name;
+
+                if(suite.moduleWrappers[id]) {
+                    suite.tapedeckWrappers[id].remove();
+                    delete suite.tapedeckWrappers[id];
+                }
+
+                suite.moduleWrappers[id] = testHelpers.addTapedeck($container, suite.moduleParams[id].type);
+                var el = suite.moduleWrappers[id].find(".tapedeck").get(0);
+
+                suite.moduleParams[id].module.bootstrap(el); // initialise the tapedeck via the same bootstrap mechanism the main application uses.
+            });
+
+            QUnit.moduleDone(function (params) {
+                var id = params.name;
+                if(suite.moduleWrappers[id]) {
+                    suite.moduleWrappers[id].remove();
+                    delete suite.moduleWrappers[id];
+                }
+            })
+
+            // These function calls set up the tests but do not actually run them. QUnit will run them as it pleases.
+            // But what we are doing is setting up two QUnit modules (sets of tests,) one for the typescript code and one for the javascript code.
+            //
+            // If you were not interested in testing typescript code you might comment out the first initTest call for example.
+            //
+            // Anything passed in the second argument can be made available to the test suite.
+            suite.initTest("Typescript Implementation Tests", { type: "typescript", module: BootstrapTS });
+            suite.initTest("Javascript Implementation Tests", { type: "javascript", module: BootstrapJS });
+        })(window.testSuite);
+
+    </script>
+</html>

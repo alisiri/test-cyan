@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+
+  <body>
+<article id="QUnit-log1" class="entry method"><h2 class="section-title"><span class="name">QUnit.log( callback )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Register a callback to fire whenever an assertion completes.</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="QUnit-log-callback" href="#QUnit-log-callback"><span class="icon-link"></span>QUnit.log( callback )</a></h4>
+<ul><li>
+<div><strong>callback</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Function">Function</a>( <a href="http://api.jquery.com/Types#Object">Object</a> details )</div>
+<div>Callback to execute. Provides a single argument with the following properties:</div>
+<ul>
+<li>
+<div><strong>result</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Boolean">Boolean</a>
+</div>
+<div>The boolean result of an assertion, <code>true</code> means passed, <code>false</code> means failed.</div>
+</li>
+<li>
+<div><strong>actual</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
+</div>
+<div>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</div>
+</li>
+<li>
+<div><strong>expected</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
+</div>
+<div>One side of a comparision assertion. Can be undefined when <code>ok()</code> is used.</div>
+</li>
+<li>
+<div><strong>message</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+</div>
+<div>A string description provided by the assertion.</div>
+</li>
+<li>
+<div><strong>source</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+</div>
+<div>The associated stacktrace, either from an exception or pointing to the source of the assertion. Depends on browser support for providing stacktraces, so can be undefined.</div>
+</li>
+</ul>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		This is one of several callbacks QUnit provides. Its intended for integration scenarios like PhantomJS or Jenkins.
+		<p>The properties of the details argument are listed below as options.</p>
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Register a callback that logs assertion result and its message</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>QUnit.log(<span class="keyword">function</span>( details ) {</code></div></div><div class="container"><div class="line"><code>  console.log( <span class="string">"Log: "</span>, details.result, details.message );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>

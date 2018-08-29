@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+
+  <body>
+<article id="ok1" class="entry method"><h2 class="section-title"><span class="name">ok( state, message )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>
+		A boolean assertion, equivalent to CommonJS's assert.ok() and JUnit's assertTrue(). Passes if the first argument is truthy.
+	</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="ok-state-message" href="#ok-state-message"><span class="icon-link"></span>ok( state, message )</a></h4>
+<ul>
+<li>
+<div><strong>state</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Expression">Expression</a>
+</div>
+<div>Expression being tested</div>
+</li>
+<li>
+<div><strong>message</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+</div>
+<div>A short description of the assertion</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		<p>The most basic assertion in QUnit, <code>ok()</code> requires just one argument. If the argument evaluates to true, the assertion passes; otherwise, it fails. If a second message argument is provided, it will be displayed in place of the result.</p>
+
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc"></span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>test( <span class="string">"ok test"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  ok( <span class="literal">true</span>, <span class="string">"true succeeds"</span> );</code></div></div><div class="container"><div class="line"><code>  ok( <span class="string">"non-empty"</span>, <span class="string">"non-empty string succeeds"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  ok( <span class="literal">false</span>, <span class="string">"false fails"</span> );</code></div></div><div class="container"><div class="line"><code>  ok( <span class="number">0</span>, <span class="string">"0 fails"</span> );</code></div></div><div class="container"><div class="line"><code>  ok( <span class="literal">NaN</span>, <span class="string">"NaN fails"</span> );</code></div></div><div class="container"><div class="line"><code>  ok( <span class="string">""</span>, <span class="string">"empty string fails"</span> );</code></div></div><div class="container"><div class="line"><code>  ok( <span class="literal">null</span>, <span class="string">"null fails"</span> );</code></div></div><div class="container"><div class="line"><code>  ok( <span class="literal">undefined</span>, <span class="string">"undefined fails"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>

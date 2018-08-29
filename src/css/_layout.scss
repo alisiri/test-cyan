@@ -1,0 +1,84 @@
+body.tapedeck-application {
+    background-image: url("../../assets/background.jpg");
+    background-repeat: repeat-y;
+    background-size: 100%;
+    margin: 0;
+    padding-top: 16px;
+
+    a, a:visited, a:hover {
+        color: lightblue;
+    }
+
+    .preamble {
+        background-color: rgba(0,0,0,0.5);
+        font-size: larger;
+        color: white;
+        padding: 1px 16px 1px 16px;
+        border-radius: 8px;
+        width: 87%;
+        margin-left: calc(5%);
+        border: 4px solid white;
+        border-radius: 16px;
+
+        span.dir {
+            display: inline;
+            background-color: black;
+            font-family: monospace;
+            font-weight: bold;
+            padding: 0px 4px;
+        }
+    }
+
+    .tabset {
+        margin-left: calc(5%);
+
+        li.tab {
+            list-style: none;
+            font-size: larger;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: rgba(0,0,0, 0.5);
+            padding: 4px 8px;
+            border-radius: 4px;
+
+            &:hover {
+            text-decoration: underline;
+            }
+
+            &:not(:first-child) {
+            margin-left: 8px;
+            }
+
+            &[control-for="javascript-tapedeck"] {
+            color: lightskyblue;
+            }
+
+            &[control-for="typescript-tapedeck"] {
+            color: lightgreen;
+            }
+        }
+
+        ul.tab-controls {
+            display: flex;
+            flex-direction: row;
+            padding-left: 0;
+        }
+
+        div.tab {
+            position: absolute;
+            width: 90%;
+            left: 5%;
+            background-color: rgba(0,0,0, 0.5);
+            overflow: hidden;
+
+            &[data-label="Javascript Tapedeck"] {
+            border: 4px solid rgba(lightskyblue, 0.75);
+            border-radius: 16px;
+            }
+            &[data-label="Typescript Tapedeck"] {
+            border: 4px solid rgba(lightgreen, 0.75);
+            border-radius: 16px;
+            }
+        }
+    }
+}

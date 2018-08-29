@@ -1,0 +1,176 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+  <body>
+<article id="QUnit-config1" class="entry property"><h2 class="section-title"><span>QUnit.config</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Configuration for QUnit</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name">QUnit.config</h4>
+<ul>
+<li>
+<div>
+<strong>altertitle</strong> (default: <code>true</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types#Boolean">Boolean</a>
+</div>
+<div>
+				By default, QUnit updates document.title to add a checkmark or x-mark to indicate if a testsuite passed or failed. This makes it easy to see a suites result even without looking at a tab's content.
+				<p>If you're dealing with code that tests <code>document.title</code> changes or have some other problem with this feature, set this option to false to disable it.</p>
+			</div>
+</li>
+<li>
+<div>
+<strong>autostart</strong> (default: <code>true</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types#Boolean">Boolean</a>
+</div>
+<div>
+				By default, QUnit runs tests when <code>load</code> event is triggered on the <code>window</code>. If you're loading tests asynchronsly, you can set this property to <code>false</code>, then call <code>QUnit.start()</code> once everything is loaded. See below for an example.
+			</div>
+</li>
+<li>
+<div><strong>current</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
+</div>
+<div>
+				This object isn't actually a configuration property, but is listed here anyway, as its exported through <code>QUnit.config</code>. This gives you access to some QUnit internals at runtime. See below for an example.
+			</div>
+</li>
+<li>
+<div>
+<strong>reorder</strong> (default: <code>true</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types#Boolean">Boolean</a>
+</div>
+<div>
+				By default, QUnit will run tests first that failed on a previous run. In a large testsuite, this can speed up testing a lot.
+				<p>It can also lead to random errors, in case your testsuite has non-atomic tests, where the order is important. You should fix those issues, instead of disabling reordering!</p>
+			</div>
+</li>
+<li>
+<div>
+<strong>requireExpects</strong> (default: <code>false</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types#Boolean">Boolean</a>
+</div>
+<div>
+				The <code>expect()</code> method is optional by default, though it can be useful to require each test to specify the number of expected assertions.
+				<p>Enabling this option will cause tests to fail, if they don't call <code>expect()</code> at all.</p>
+			</div>
+</li>
+<li>
+<div>
+<strong>testTimeout</strong> (default: <code>undefined</code>)</div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>
+				Specify a global timeout in milliseconds after which all tests will fail with an appropiate message. Useful when async tests aren't finishing, to prevent the testrunner getting stuck. Set to something high, e.g. 30000 (30 seconds) to avoid slow tests to time out by accident.
+			</div>
+</li>
+<li>
+<div><strong>urlConfig</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Array">Array</a>
+</div>
+<div>
+				This property controls which checkboxes to put into the QUnit toolbar element (below the header). By default, the "noglobals" and "notrycatch" checkboxes are there. By extending this array, you can add your own checkboxes.
+				<p>Each element should have three properties: <code>id</code> will be used as the config and query-string key, <code>label</code> will be used as the display propery (text in the UI), <code>tooltip</code> will be used as the title attribute, and should explain what the checkbox does.</p>
+			</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		<p>QUnit has a bunch of internal configuration defaults, some of which are useful to override. Check the description for each option for details.</p>
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">Disable autostart, useful when loading tests asynchronsly, here using requirejs:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>QUnit.config.autostart = <span class="literal">false</span>;</code></div></div><div class="container"><div class="line"><code>require(</code></div></div><div class="container"><div class="line"><code>  [ <span class="string">"tests/testModule1"</span>, <span class="string">"tests/testModule2"</span> ],</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    QUnit.start();</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code>);</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">Access <code>QUnit.config.current.testName</code> to pass the current test's name on to another tool</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>test(<span class="string">"some test"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="comment">// a few regular assertions</span></code></div></div><div class="container"><div class="line"><code>  <span class="comment">// then a call to another tool</span></code></div></div><div class="container"><div class="line"><code>  speedTest( QUnit.config.current.testName, codeUnderTest );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-2">
+<h4>Example: <span class="desc">Add a new checkbox to the toolbar, using the <code>urlConfig</code> property. This assumes there's other code on the page that will check the <code>QUnit.config.min</code> property to react to the selection.</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>QUnit.config.urlConfig.push({</code></div></div><div class="container"><div class="line"><code>  id: <span class="string">"min"</span>,</code></div></div><div class="container"><div class="line"><code>  label: <span class="string">"Minified source"</span>,</code></div></div><div class="container"><div class="line"><code>  tooltip: <span class="string">"Load minified source files instead of the regular unminified ones."</span></code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>

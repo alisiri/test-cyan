@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+
+  <body>
+	  <article id="expect1" class="entry method"><h2 class="section-title"><span class="name">expect( amount )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>
+		Specify how many assertions are expected to run within a test.
+	</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="expect-amount" href="#expect-amount"><span class="icon-link"></span>expect( amount )</a></h4>
+<ul><li>
+<div><strong>amount</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>Number of assertions in this test.</div>
+</li></ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		<p>To ensure that an explicit number of assertions are run within any test, use <code>expect( number )</code> to register an expected count. If the number of assertions run does not match the expected count, the test will fail.</p>
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">Establish an expected assertion count</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>test( <span class="string">"a test"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  expect( <span class="number">2</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="title">calc</span><span class="params">( x, operation )</span> {</span></code></div></div><div class="container"><div class="line"><code>    <span class="keyword">return</span> operation( x );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> result = calc( <span class="number">2</span>, <span class="keyword">function</span>( x ) {</code></div></div><div class="container"><div class="line"><code>    ok( <span class="literal">true</span>, <span class="string">"calc() calls operation function"</span> );</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">return</span> x * x;</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  equal( result, <span class="number">4</span>, <span class="string">"2 square equals 4"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">expectation count can be passed as the second parameter to <code>test()</code> or <code>asyncTest()</code>:</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>test( <span class="string">"a test"</span>, <span class="number">2</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="title">calc</span><span class="params">( x, operation )</span> {</span></code></div></div><div class="container"><div class="line"><code>    <span class="keyword">return</span> operation( x );</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> result = calc( <span class="number">2</span>, <span class="keyword">function</span>( x ) {</code></div></div><div class="container"><div class="line"><code>    ok( <span class="literal">true</span>, <span class="string">"calc() calls operation function"</span> );</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">return</span> x * x;</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  equal( result, <span class="number">4</span>, <span class="string">"2 square equals 4"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>

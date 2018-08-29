@@ -1,0 +1,132 @@
+@-webkit-keyframes forward-rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+.tapedeck {
+  position: relative;
+  width: 960px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    position: absolute;
+    left: 357px;
+    top: 48px;
+
+    .button {
+      cursor: pointer;
+    }
+
+    .button:not(.depressed):hover {
+      -webkit-transform: translateY(-1px);
+      transform: translateY(-1px);
+    }
+
+    .button.depressed {
+      -webkit-transform: translateY(12px);
+      transform: translateY(12px);
+    }
+  }
+
+  span.button, span.spacer {
+    display: block;
+    min-width: 30px;
+    min-height: 20px;
+
+    &[data-btn="rewind"] {
+      background-image: url("../../assets/buttons/1.png");
+    }
+    &[data-btn="stop"] {
+      background-image: url("../../assets/buttons/2.png");
+    }
+    &[data-btn="play"] {
+      background-image: url("../../assets/buttons/3.png");
+    }
+    &[data-btn="pause"] {
+      background-image: url("../../assets/buttons/4.png");
+    }
+    &[data-btn="fastforward"] {
+      background-image: url("../../assets/buttons/5.png");
+    }
+    &[data-btn="record"] {
+      background-image: url("../../assets/buttons/6.png");
+    }
+    &.spacer {
+      background-image: url("../../assets/buttons/7.png");
+    }
+  }
+
+  span.spindle {
+    display: inline-block;
+    width: 47px;
+    height: 47px;
+    max-width: 47px;
+    max-height: 47px;
+
+    &[spindle-side="left"] {
+      background-image: url("../../assets/spindle-left.png");
+    }
+    &[spindle-side="right"] {
+      background-image: url("../../assets/spindle-right.png");
+    }
+  }
+
+  .spindles {
+    position: absolute;
+    left: 398px;
+    top: 264px;
+    .spindle:nth-child(2) {
+      margin-left: 36px;
+    }
+
+    .spindle.spin {
+      -webkit-animation: forward-rotation 2s infinite linear;
+    }
+  }
+
+  .shadow {
+    position: absolute;
+    left: 21px;
+    top: 158px;
+    bottom: 49px;
+    right: 0;
+    -webkit-box-shadow: -28px 30px 26px -11px black;
+    box-shadow: -28px 30px 26px -11px black;
+    border-radius: 30px;
+  }
+
+  .shadow2 {
+    position: absolute;
+    left: 26px;
+    top: 83px;
+    bottom: 382px;
+    right: 0;
+    -webkit-box-shadow: -20px 0 26px 3px black;
+    box-shadow: -20px 0 26px 3px black;
+    border-radius: 30px;
+  }
+
+  .background {
+    background-image: url("../../assets/boombox.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+}

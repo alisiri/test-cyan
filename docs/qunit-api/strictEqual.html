@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+
+  <body>
+<article id="strictEqual1" class="entry method"><h2 class="section-title"><span class="name">strictEqual( actual, expected, message )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>
+		A strict type and value comparison assertion.
+	</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="strictEqual-actual-expected-message" href="#strictEqual-actual-expected-message"><span class="icon-link"></span>strictEqual( actual, expected, message )</a></h4>
+<ul>
+<li>
+<div><strong>actual</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
+</div>
+<div>Expression being tested</div>
+</li>
+<li>
+<div><strong>expected</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
+</div>
+<div>Known comparison value</div>
+</li>
+<li>
+<div><strong>message</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+</div>
+<div>A short description of the assertion</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		<p>The <code>strictEqual()</code> assertion provides the most rigid comparison of type and value with the strict equality operator (<code>===</code>.</p>
+		<p><a href="equal.html"><code>equal()</code></a> can be used to test non-strict equality.</p>
+		<p><a href="notStrictEqual.html"><code>notStrictEqual()</code></a> can be used to explicitly test strict inequality.</p>
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Compare the value of two primitives, having the same value and type.</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>test( <span class="string">"strictEqual test"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  strictEqual( <span class="number">1</span>, <span class="number">1</span>, <span class="string">"1 and 1 are the same value and type"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>

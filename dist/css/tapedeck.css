@@ -1,0 +1,124 @@
+body {
+  background-image: url("../../assets/background.jpg");
+  background-repeat: repeat-y;
+  background-size: 100%;
+  margin: 0;
+  padding-top: 16px; }
+
+.preamble {
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: larger;
+  color: white;
+  padding: 1px 16px 1px 16px;
+  border-radius: 8px;
+  width: 88%;
+  margin-left: calc(5% - 4px); }
+  .preamble span.dir {
+    display: inline;
+    background-color: black;
+    font-family: monospace;
+    font-weight: bold;
+    padding: 0px 4px; }
+
+.tabset {
+  margin-left: calc(5%); }
+  .tabset li.tab {
+    list-style: none;
+    font-size: larger;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    border-radius: 4px; }
+    .tabset li.tab:hover {
+      text-decoration: underline; }
+    .tabset li.tab:not(:first-child) {
+      margin-left: 8px; }
+    .tabset li.tab[control-for="javascript-tapedeck"] {
+      color: lightskyblue; }
+    .tabset li.tab[control-for="typescript-tapedeck"] {
+      color: lightgreen; }
+  .tabset ul.tab-controls {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0; }
+  .tabset div.tab {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.5); }
+    .tabset div.tab[data-label="Javascript Tapedeck"] {
+      border: 4px solid rgba(135, 206, 250, 0.75);
+      border-radius: 16px; }
+    .tabset div.tab[data-label="Typescript Tapedeck"] {
+      border: 4px solid rgba(144, 238, 144, 0.75);
+      border-radius: 16px; }
+
+@-webkit-keyframes forward-rotation {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(359deg); } }
+
+.tapedeck {
+  position: relative;
+  width: 960px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto; }
+  .tapedeck .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    position: absolute;
+    left: 357px;
+    top: 48px; }
+    .tapedeck .buttons .button {
+      cursor: pointer; }
+    .tapedeck .buttons .button:not(.depressed):hover {
+      -webkit-transform: translateY(-1px);
+      transform: translateY(-1px); }
+    .tapedeck .buttons .button.depressed {
+      -webkit-transform: translateY(12px);
+      transform: translateY(12px); }
+  .tapedeck .spindles {
+    position: absolute;
+    left: 398px;
+    top: 264px; }
+    .tapedeck .spindles .spindle:nth-child(2) {
+      margin-left: 36px; }
+    .tapedeck .spindles .spindle.spin {
+      -webkit-animation: forward-rotation 2s infinite linear; }
+  .tapedeck .shadow {
+    position: absolute;
+    left: 21px;
+    top: 158px;
+    bottom: 49px;
+    right: 0;
+    -webkit-box-shadow: -28px 30px 26px -11px black;
+    box-shadow: -28px 30px 26px -11px black;
+    border-radius: 30px; }
+  .tapedeck .shadow2 {
+    position: absolute;
+    left: 26px;
+    top: 83px;
+    bottom: 382px;
+    right: 0;
+    -webkit-box-shadow: -20px 0 26px 3px black;
+    box-shadow: -20px 0 26px 3px black;
+    border-radius: 30px; }
+  .tapedeck .background {
+    background-image: url("../../assets/boombox.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; }
+
+/*# sourceMappingURL=tapedeck.css.map */

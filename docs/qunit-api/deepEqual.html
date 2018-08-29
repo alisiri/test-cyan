@@ -1,0 +1,71 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+
+  <body>
+	  
+<article id="deepEqual1" class="entry method"><h2 class="section-title"><span class="name">deepEqual( actual, expected, message )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>
+		A deep recursive comparison assertion, working on primitive types, arrays, objects, regular expressions, dates and functions.
+	</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="deepEqual-actual-expected-message" href="#deepEqual-actual-expected-message"><span class="icon-link"></span>deepEqual( actual, expected, message )</a></h4>
+<ul>
+<li>
+<div><strong>actual</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
+</div>
+<div>Object or Expression being tested</div>
+</li>
+<li>
+<div><strong>expected</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Object">Object</a>
+</div>
+<div>Known comparison value</div>
+</li>
+<li>
+<div><strong>message</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+</div>
+<div>A short description of the assertion</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		<p>The <code>deepEqual()</code> assertion can be used just like <code>equal()</code> when comparing the value of objects, such that <code>{ key: value }</code> is equal to <code>{ key: value }</code>. For non-scalar values, identity will be disregarded by <code>deepEqual</code>.</p>
+		<p><a href="/notDeepEqual"><code>notDeepEqual()</code></a> can be used to explicitly test deep, strict inequality.</p>
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Compare the value of two objects.</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>test( <span class="string">"deepEqual test"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> obj = { foo: <span class="string">"bar"</span> };</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  deepEqual( obj, { foo: <span class="string">"bar"</span> }, <span class="string">"Two objects can be the same in value"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>

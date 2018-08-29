@@ -1,0 +1,118 @@
+<html>
+
+<head>
+	<link href="stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+	<article id="test1" class="entry method">
+		<h2 class="section-title"><span class="name">test( title [, expected ], test )</span></h2>
+		<div class="entry-wrapper">
+			<p class="desc"><strong>Description: </strong>
+				Add a test to run.
+			</p>
+			<ul class="signatures">
+				<li class="signature">
+					<h4 class="name"><a id="test-title-expected-test" href="#test-title-expected-test"><span class="icon-link"></span>test(
+							title [, expected ], test )</a></h4>
+					<ul>
+						<li>
+							<div><strong>title</strong></div>
+							<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+							</div>
+							<div>Title of unit being tested</div>
+						</li>
+						<li>
+							<div><strong>expected</strong></div>
+							<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+							</div>
+							<div>Number of assertions in this test</div>
+						</li>
+						<li>
+							<div><strong>test</strong></div>
+							<div>Type: <a href="http://api.jquery.com/Types#Function">Function</a>( QUnit.assert:assert )</div>
+							<div>Function to close over assertions</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="longdesc" id="entry-longdesc">
+				<p>When testing the most common, synchronous code, use <code>test()</code></p>
+				<p>The <code>assert</code> argument to the callback contains all of QUnit's assertion methods. If you are avoiding
+					using any of QUnit's globals, you can use the assert argument instead.</p>
+			</div>
+			<section class="entry-examples" id="entry-examples">
+				<header>
+					<h2 class="underline">Examples:</h2>
+				</header>
+				<div class="entry-example" id="example-0">
+					<h4>Example: <span class="desc">Simple, synchronous code test.</span>
+					</h4>
+					<div class="syntaxhighlighter javascript ">
+						<table>
+							<tbody>
+								<tr>
+									<td class="gutter">
+
+										<div class="line n1">1</div>
+
+										<div class="line n2">2</div>
+
+										<div class="line n3">3</div>
+
+									</td>
+									<td class="code">
+										<pre><div class="container"><div class="line"><code>test( <span class="string">"hello test"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  ok( <span class="number">1</span> == <span class="string">"1"</span>, <span class="string">"Passed!"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+				<div class="entry-example" id="example-1">
+					<h4>Example: <span class="desc">A more practical example, using the assert argument and no globals.</span>
+					</h4>
+					<div class="syntaxhighlighter javascript ">
+						<table>
+							<tbody>
+								<tr>
+									<td class="gutter">
+
+										<div class="line n1">1</div>
+
+										<div class="line n2">2</div>
+
+										<div class="line n3">3</div>
+
+										<div class="line n4">4</div>
+
+										<div class="line n5">5</div>
+
+										<div class="line n6">6</div>
+
+										<div class="line n7">7</div>
+
+										<div class="line n8">8</div>
+
+										<div class="line n9">9</div>
+
+										<div class="line n10">10</div>
+
+									</td>
+									<td class="code">
+										<pre><div class="container"><div class="line"><code>QUnit.test( <span class="string">"a test"</span>, <span class="keyword">function</span>( assert ) {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="title">square</span><span class="params">( x )</span> {</span></code></div></div><div class="container"><div class="line"><code>    <span class="keyword">return</span> x * x;</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> result = square( <span class="number">2</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  assert.equal( result, <span class="number">4</span>, <span class="string">"square(2) equals 4"</span> );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+			</section>
+		</div>
+	</article>
+
+</body>
+
+</html>

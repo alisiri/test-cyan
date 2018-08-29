@@ -1,0 +1,136 @@
+<html>
+
+<head>
+	<link href="stylesheet.css" rel="stylesheet">
+</head>
+<body>
+<article id="throws1" class="entry method">
+	<h2 class="section-title"><span class="name">throws( block, expected, message )</span></h2>
+	<div class="entry-wrapper">
+		<p class="desc"><strong>Description: </strong>
+			Assertion to test if a callback throws an exception when run.
+		</p>
+		<ul class="signatures">
+			<li class="signature">
+				<h4 class="name"><a id="throws-block-expected-message" href="#throws-block-expected-message"><span class="icon-link"></span>throws(
+						block, expected, message )</a></h4>
+				<ul>
+					<li>
+						<div><strong>block</strong></div>
+						<div>Type: <a href="http://api.jquery.com/Types#Function">Function</a>()</div>
+						<div>Function to execute</div>
+					</li>
+					<li>
+						<div><strong>expected</strong></div>
+						<div>Type: <a href="http://api.jquery.com/Types#Error">Error</a>
+						</div>
+						<div>Error Object to compare</div>
+					</li>
+					<li>
+						<div><strong>message</strong></div>
+						<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+						</div>
+						<div>A short description of the assertion</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="longdesc" id="entry-longdesc">
+			<p>When testing code that is expected to throw an exception based on a specific set of circumstances, use <code>throws()</code>
+				to catch the error object for testing and comparison.</p>
+		</div>
+		<section class="entry-examples" id="entry-examples">
+			<header>
+				<h2 class="underline">Example:</h2>
+			</header>
+			<div class="entry-example" id="example-0">
+				<h4><span class="desc">Assert the correct error message is received for a custom error object.</span></h4>
+				<div class="syntaxhighlighter javascript ">
+					<table>
+						<tbody>
+							<tr>
+								<td class="gutter">
+
+									<div class="line n1">1</div>
+
+									<div class="line n2">2</div>
+
+									<div class="line n3">3</div>
+
+									<div class="line n4">4</div>
+
+									<div class="line n5">5</div>
+
+									<div class="line n6">6</div>
+
+									<div class="line n7">7</div>
+
+									<div class="line n8">8</div>
+
+									<div class="line n9">9</div>
+
+									<div class="line n10">10</div>
+
+									<div class="line n11">11</div>
+
+									<div class="line n12">12</div>
+
+									<div class="line n13">13</div>
+
+									<div class="line n14">14</div>
+
+									<div class="line n15">15</div>
+
+									<div class="line n16">16</div>
+
+									<div class="line n17">17</div>
+
+									<div class="line n18">18</div>
+
+									<div class="line n19">19</div>
+
+									<div class="line n20">20</div>
+
+									<div class="line n21">21</div>
+
+									<div class="line n22">22</div>
+
+									<div class="line n23">23</div>
+
+									<div class="line n24">24</div>
+
+									<div class="line n25">25</div>
+
+									<div class="line n26">26</div>
+
+									<div class="line n27">27</div>
+
+									<div class="line n28">28</div>
+
+									<div class="line n29">29</div>
+
+									<div class="line n30">30</div>
+
+									<div class="line n31">31</div>
+
+									<div class="line n32">32</div>
+
+									<div class="line n33">33</div>
+
+								</td>
+								<td class="code">
+									<pre><div class="container"><div class="line"><code>test( <span class="string">"throws"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  <span class="function"><span class="keyword">function</span> <span class="title">CustomError</span><span class="params">( message )</span> {</span></code></div></div><div class="container"><div class="line"><code>    <span class="keyword">this</span>.message = message;</code></div></div><div class="container"><div class="line"><code>  }</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  CustomError.prototype.toString = <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">return</span> <span class="keyword">this</span>.message;</code></div></div><div class="container"><div class="line"><code>  };</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  throws(</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>      <span class="keyword">throw</span> <span class="string">"error"</span></code></div></div><div class="container"><div class="line"><code>    },</code></div></div><div class="container"><div class="line"><code>    <span class="string">"throws with just a message, no expected"</span></code></div></div><div class="container"><div class="line"><code>  );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  throws(</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>      <span class="keyword">throw</span> <span class="keyword">new</span> CustomError();</code></div></div><div class="container"><div class="line"><code>    },</code></div></div><div class="container"><div class="line"><code>    CustomError,</code></div></div><div class="container"><div class="line"><code>    <span class="string">"raised error is an instance of CustomError"</span></code></div></div><div class="container"><div class="line"><code>  );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  throws(</code></div></div><div class="container"><div class="line"><code>    <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>      <span class="keyword">throw</span> <span class="keyword">new</span> CustomError(<span class="string">"some error description"</span>);</code></div></div><div class="container"><div class="line"><code>    },</code></div></div><div class="container"><div class="line"><code>    <span class="regexp">/description/</span>,</code></div></div><div class="container"><div class="line"><code>    <span class="string">"raised error message contains 'description'"</span></code></div></div><div class="container"><div class="line"><code>  );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</section>
+	</div>
+</article>
+
+</body>
+
+</html>

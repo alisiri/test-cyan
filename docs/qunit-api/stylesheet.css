@@ -1,0 +1,24 @@
+body {
+    padding-top: 16px;
+}
+#sidebar {
+    margin-top: 32px;
+    border-top: 1px solid black;
+}
+
+article {
+    width: 90vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header.page-header div.category-archive-meta,
+#content > p {
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header.entry-header div.entry-meta {
+    transform: translateY(1em);
+}

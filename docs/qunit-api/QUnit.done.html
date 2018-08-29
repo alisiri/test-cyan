@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+<body>
+<article id="QUnit-done1" class="entry method"><h2 class="section-title"><span class="name">QUnit.done( callback )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>Register a callback to fire whenever the test suite ends.</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="QUnit-done-callback" href="#QUnit-done-callback"><span class="icon-link"></span>QUnit.done( callback )</a></h4>
+<ul><li>
+<div><strong>callback</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Function">Function</a>( <a href="http://api.jquery.com/Types#Object">Object</a> details )</div>
+<div>Callback to execute. Provides a single argument with the following properties:</div>
+<ul>
+<li>
+<div><strong>failed</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>The number of failed assertions</div>
+</li>
+<li>
+<div><strong>passed</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>The number of passed assertions</div>
+</li>
+<li>
+<div><strong>total</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>The total number of assertions</div>
+</li>
+<li>
+<div><strong>runtime</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>The time in milliseconds it took tests to run from start to finish.</div>
+</li>
+</ul>
+</li></ul>
+</li></ul>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Example:</h2></header><div class="entry-example" id="example-0">
+<h4><span class="desc">Register a callback that logs test results to the console.</span></h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>QUnit.done(<span class="keyword">function</span>( details ) {</code></div></div><div class="container"><div class="line"><code>  console.log( <span class="string">"Total: "</span>, details.total, <span class="string">" Failed: "</span>, details.failed, <span class="string">" Passed: "</span>, details.passed, <span class="string">" Runtime: "</span>, details.runtime );</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+</body>
+</html>

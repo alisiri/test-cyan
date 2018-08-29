@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <title>Capsifi Frontend Developer Test</title>
+    <link rel="stylesheet" href="dist/css/tapedeck.min.css" type="text/css" media="all" />
+    <script src="dist/js/tapedeck-lib.min.js" type="text/javascript"></script>
+    <script src="dist/js/tapedeck-ts.min.js" type="text/javascript"></script>
+    <script src="dist/js/tapedeck.min.js" type="text/javascript"></script>
+  </head>
+  <body class="tapedeck-application">
+    <div class="preamble">
+      <h3>Tapedeck Test</h3>
+      <p><a href="readme.md">Check the</a> <span class="dir">readme.md</span> <a href="readme.md">file for instructions and explanations</a>.
+          The source code is in <span class="dir">src/</span>, <a href="tests/test-both/index.html">unit test harness</a> in <span class="dir">tests/</span> 
+          (you will need to build the distributable to run the tests.) <a href="docs/qunit-api/index.html">API documentation for the unit test library can be found here.</a></p>
+      <p>Aside from the technical aspects, this test is non-representative of our product(s) and is just a test.</p>
+      <p>(Yes, these are two separate instances, yes the code has been naively implemented and they are interfering with each other.)</p>
+    </div>
+    <div class="tabset">
+      <div class="tab" data-label="Javascript Tapedeck">
+        <div id="javascript-tapedeck" implementation="javascript" class="tapedeck">
+          <div class="buttons">
+            <span class="button" data-btn="rewind"></span>
+            <span class="button" data-btn="stop"></span>
+            <span class="button" data-btn="play"></span>
+            <span class="button" data-btn="pause"></span>
+            <span class="button" data-btn="fastforward"></span>
+            <span class="button" data-btn="record"></span>
+            <span class="spacer"></span>
+          </div>
+          <div class="shadow2"></div>
+          <div class="background"></div>
+          <div class="spindles">
+            <span class="spindle spin" spindle-side="left"></span>
+            <span class="spindle spin" spindle-side="right"></span>
+          </div>
+          <div class="shadow"></div>
+        </div>
+      </div>
+      <div class="tab" data-label="Typescript Tapedeck">
+        <div id="typescript-tapedeck" implementation="typescript" class="tapedeck">
+          <div class="buttons">
+            <span class="button" data-btn="rewind"></span>
+            <span class="button" data-btn="stop"></span>
+            <span class="button" data-btn="play"></span>
+            <span class="button" data-btn="pause"></span>
+            <span class="button" data-btn="fastforward"></span>
+            <span class="button" data-btn="record"></span>
+            <span class="spacer"></span>
+          </div>
+          <div class="shadow2"></div>
+          <div class="background"></div>
+          <div class="spindles">
+            <span class="spindle spin" spindle-side="left"></span>
+            <span class="spindle spin" spindle-side="right"></span>
+          </div>
+          <div class="shadow"></div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if(!BootstrapTS) {
+          console.log("BootstrapTS not loaded!");
+        } else {
+          BootstrapTS.bootstrap($('.tapedeck[implementation="typescript"]').get(0));
+        }
+
+        if(!BootstrapJS) {
+          console.log("BootstrapJS not loaded!");
+        } else {
+          BootstrapJS.bootstrap($('.tapedeck[implementation="javascript"]').get(0));
+        }
+      });
+    </script>
+  </body>
+</html>

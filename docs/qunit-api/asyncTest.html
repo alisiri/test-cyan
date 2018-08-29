@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <link href="stylesheet.css" rel="stylesheet">
+  </head>
+  <body>
+<article id="asyncTest1" class="entry method"><h2 class="section-title"><span class="name">asyncTest( name, expected, test )</span></h2>
+<div class="entry-wrapper">
+<p class="desc"><strong>Description: </strong>
+		Add an asynchronous test to run. The test must include a call to start().
+	</p>
+<ul class="signatures"><li class="signature">
+<h4 class="name"><a id="asyncTest-name-expected-test" href="#asyncTest-name-expected-test"><span class="icon-link"></span>asyncTest( name, expected, test )</a></h4>
+<ul>
+<li>
+<div><strong>name</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#String">String</a>
+</div>
+<div>Title of unit being tested</div>
+</li>
+<li>
+<div><strong>expected</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Number">Number</a>
+</div>
+<div>Number of assertions in this test</div>
+</li>
+<li>
+<div><strong>test</strong></div>
+<div>Type: <a href="http://api.jquery.com/Types#Function">Function</a>()</div>
+<div>Function to close over assertions</div>
+</li>
+</ul>
+</li></ul>
+<div class="longdesc" id="entry-longdesc">
+		<p>For testing asynchronous code, <code>asyncTest</code> will automatically stop the test runner and wait for your code to call <a href="start.html"><code>start()</code></a> to continue.</p>
+	</div>
+<section class="entry-examples" id="entry-examples"><header><h2 class="underline">Examples:</h2></header><div class="entry-example" id="example-0">
+<h4>Example: <span class="desc">The following illustrates an asynchronous test that waits 1 second before resuming</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>asyncTest( <span class="string">"asynchronous test: one second later!"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  expect( <span class="number">1</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  setTimeout(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    ok( <span class="literal">true</span>, <span class="string">"Passed and ready to resume!"</span> );</code></div></div><div class="container"><div class="line"><code>    start();</code></div></div><div class="container"><div class="line"><code>  }, <span class="number">1000</span>);</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div>
+<div class="entry-example" id="example-1">
+<h4>Example: <span class="desc">A more practical example that must wait for a video element to be loaded before running any assertions.</span>
+</h4>
+<div class="syntaxhighlighter javascript ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code>asyncTest( <span class="string">"asynchronous test: video ready to play"</span>, <span class="number">1</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>  <span class="keyword">var</span> $video = $( <span class="string">"video"</span> );</code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code>  $video.on( <span class="string">"canplaythrough"</span>, <span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    ok( <span class="literal">true</span>, <span class="string">"video has loaded and is ready to play"</span> );</code></div></div><div class="container"><div class="line"><code>    start();</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>});</code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+</div></section>
+</div></article>
+
+</body>
+</html>
