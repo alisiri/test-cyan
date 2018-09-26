@@ -33,6 +33,7 @@ window.testSuite = window.testSuite || { moduleWrappers: { }, moduleParams: { } 
 ;(function() {
     'use strict';
 
+
     /** Exposes testsuite function to the outside world, allowing the instantiation of test modules
      * @param {string} name Module name
      */
@@ -48,7 +49,7 @@ window.testSuite = window.testSuite || { moduleWrappers: { }, moduleParams: { } 
      * @param {string} name the name of the test module to retrieve the tapedeck for.
      */
     var getTapedeck = function (name) {
-        return window.testSuite.moduleWrappers[name].find(".tapedeck");
+        return             window.testSuite.moduleWrappers[name].find(".tapedeck");
     };
 
     /** Retrieves all the button elements for the tapedeck wrapper element associated with
@@ -83,7 +84,7 @@ window.testSuite = window.testSuite || { moduleWrappers: { }, moduleParams: { } 
 
         // Tests shared by both modules would include basic testing via DOM interrogation
 
-        test("pause button toggle", function () {
+        QUnit.test("pause button toggle", function () {
             expect(2);
 
             var btn = getButtons(getTapedeck(name))["pause"];
@@ -98,7 +99,7 @@ window.testSuite = window.testSuite || { moduleWrappers: { }, moduleParams: { } 
             equal(btn.hasClass("depressed"), false, "clicking the pause button again resets it");
         });
 
-        test("record button toggle", function () {
+        QUnit.test("record button toggle", function () {
             expect(2);
 
             var btn = getButtons(getTapedeck(name))["record"];
@@ -123,7 +124,7 @@ window.testSuite = window.testSuite || { moduleWrappers: { }, moduleParams: { } 
             // Even though this is a pointless test, it demonstrates that these tests don't
             // just have to be about the DOM, you can pass objects (including instance objects) to the test module and access
             // them in your unit tests.
-            test("BootstrapTS pointless unit test", function () {
+            QUnit.test("BootstrapTS pointless unit test", function () {
                 expect(2);
                 var _module = window.testSuite.moduleParams[name].module;
                 equal(Object.keys(_module).length, 1, "BootstrapTS has one key");

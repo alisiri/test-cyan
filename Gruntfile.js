@@ -66,23 +66,23 @@ module.exports = function(grunt) {
             default: {
                 tsconfig: 'tsconfig.json'
             }
-        },
-        qunit: {
-            all: {
-                options: {
-                    urls:[
-                        'http://localhost:4444/tests/test-both/index.html',
-                    ]
-                }
-            }
-        },
-        connect: {
-            server: {
-                options: {
-                    port: 4444,
-                    base: ['.', 'tests', 'tests/test-both']
-                }
-            }
+    //    },
+    //    qunit: {
+    //        all: {
+    //            options: {
+    //                urls:[
+    //                    'http://localhost:4444/tests/test-both/index.html',
+    //                ]
+    //            }
+    //        }
+    //    },
+    //    connect: {
+    //        server: {
+    //            options: {
+    //                port: 4444,
+    //                base: ['.', 'tests', 'tests/test-both']
+    //            }
+    //        }
         }
     });
 
@@ -133,5 +133,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask("build-dist", ["clean:dist","build","dist"]);
 
-    grunt.registerTask("test", [ "qunit_junit",  "connect:server", "qunit"]);
+    //grunt.registerTask("test", [ "qunit_junit",  "connect:server", "qunit"]);
 };

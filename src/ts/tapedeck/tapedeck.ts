@@ -1,6 +1,7 @@
 namespace TapedeckTS {
+
   /**
-   * Really this is just here as an excuse to build a multi-file solution to keep the bootstrap code separate from example code.
+   * Really this is just here as an excuse to build a multi-file solution to keep the bootstrap code separate from example "implementation" code.
    * We don't expect you to use this function, feel free to delete it.
    * @param el - the tapedeck element
    */

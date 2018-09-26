@@ -3,9 +3,8 @@ var TapedeckJS = TapedeckJS || {};
     'use strict';
 
     /**
-     * Really this is just here as an excuse to build a multi-file solution to keep the bootstrap code separate from example code.
-     * We don't expect you to use this function, please delete it.
-     * In fact it is wrong in several ways (naive implementation) so you really shouldn't let it influence you in any way.
+     * Really this is just here as an excuse to build a multi-file solution to keep the bootstrap code separate from example "implementation" code.
+     * We don't expect you to use this function, feel free to delete it.
      * @param el - the tapedeck element
      */
     this.bindButtons = function (el) {
