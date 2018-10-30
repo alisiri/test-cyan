@@ -39,22 +39,22 @@
             <div class="shadow"></div>
           </div>
         </div>
-        <div class="tab" data-label="Typescript Tapedeck">
+       <div class="tab" data-label="Typescript Tapedeck">
           <div id="typescript-tapedeck" implementation="typescript" class="tapedeck">
             <div class="buttons">
-              <span class="button" data-btn="rewind"></span>
-              <span class="button" data-btn="stop"></span>
-              <span class="button" data-btn="play"></span>
-              <span class="button" data-btn="pause"></span>
-              <span class="button" data-btn="fastforward"></span>
-              <span class="button" data-btn="record"></span>
+              <span class="button" data-btn="rewindtd" ></span>
+              <span class="button" data-btn="stopdsf"></span>
+              <span class="button" data-btn="playds"></span>
+              <span class="button" data-btn="pausefa"></span>
+              <span class="button" data-btn="fastforwardfas"></span>
+              <span class="button" data-btn="recordfsda"></span>
               <span class="spacer"></span>
             </div>
           <div class="shadow2"></div>
           <div class="background"></div>
           <div class="spindles">
-            <span class="spindle spin" spindle-side="left"></span>
-            <span class="spindle spin" spindle-side="right"></span>
+            <span class="spindle spin1" spindle-side="left"></span>
+            <span class="spindle spin1" spindle-side="right"></span>
           </div>
           <div class="shadow"></div>
         </div>
@@ -62,11 +62,7 @@
     </div>
     <script type="text/javascript">
       $(document).ready(function () {
-        if(!BootstrapTS) {
-          console.log("BootstrapTS not loaded!");
-        } else {
-          BootstrapTS.bootstrap($('.tapedeck[implementation="typescript"]').get(0));
-        }
+        
 
         if(!BootstrapJS) {
           console.log("BootstrapJS not loaded!");

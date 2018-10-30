@@ -7,6 +7,15 @@
   }
 }
 
+@-webkit-keyframes reverse-rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
 .tapedeck {
   position: relative;
   width: 960px;

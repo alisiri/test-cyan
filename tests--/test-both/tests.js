@@ -83,12 +83,7 @@ window.testSuite = window.testSuite || { moduleWrappers: { }, moduleParams: { } 
         QUnit.module(name);
 
         // Tests shared by both modules would include basic testing via DOM interrogation
-		QUnit.test("function exists", function () {
-            
-			ok(reviseClickedElement,"function exists");
-            
-        });
-		
+
         QUnit.test("pause button toggle", function () {
             expect(2);
 
@@ -101,7 +96,7 @@ window.testSuite = window.testSuite || { moduleWrappers: { }, moduleParams: { } 
 
             btn.click();
 
-            equal(btn.hasClass("uppressed"), false, "clicking the pause button again resets it");
+            equal(btn.hasClass("depressed"), false, "clicking the pause button again resets it");
         });
 
         QUnit.test("record button toggle", function () {
@@ -112,69 +107,12 @@ window.testSuite = window.testSuite || { moduleWrappers: { }, moduleParams: { } 
 
             btn.click();
 
-            ok(btn.hasClass("depressed"), "clicking the record button depress it only when play button is depressed");
+            ok(btn.hasClass("depressed"), "clicking the record button depresses it");
 
             btn.click();
 
-            equal(btn.hasClass("depressed"), false, "clicking the record button again maintains status quo");
+            equal(btn.hasClass("depressed"), false, "clicking the record button again resets it");
         });
-		 QUnit.test("Rewind Button Pressed", function () {
-            expect(2);
-
-            var btn = getButtons(getTapedeck(name))["rewind"];
-            if(btn.hasClass("depressed")) { btn.click(); } 
-
-            btn.click();
-
-            ok(btn.hasClass("depressed"), "clicking the record button depresses it and spindle move reverse direction with twice the speed");
-
-            btn.click();
-
-            equal(btn.hasClass("depressed"), false, "clicking the reverse button again has no effect");
-        });
-		 QUnit.test("Stop Button Pressed", function () {
-            expect(2);
-
-            var btn = getButtons(getTapedeck(name))["stop"];
-            if(btn.hasClass("depressed")) { btn.click(); } 
-            btn.click();
-
-            ok(btn.hasClass("depressed"), "clicking the stop button resets all the buttons");
-
-            btn.click();
-
-            equal(btn.hasClass("depressed"), false, "clicking the stop button again has no effect");
-        });
-		 QUnit.test("play button toggle", function () {
-            expect(2);
-
-            var btn = getButtons(getTapedeck(name))["play"];
-            if(btn.hasClass("depressed")) { btn.click(); } // reset the button if necessary
-
-            btn.click();
-
-            ok(btn.hasClass("depressed"), "clicking the play button rotates spindles in forward direction with single speed");
-
-            btn.click();
-
-            equal(btn.hasClass("depressed"), false, "clicking the play button again has no effect");
-        });
-		
-		 QUnit.test("fastforward button toggle", function () {
-            expect(2);
-
-            var btn = getButtons(getTapedeck(name))["fastforward"];
-            if(btn.hasClass("depressed")) { btn.click(); } 
-
-            btn.click();
-
-            ok(btn.hasClass("depressed"), "clicking the fastforward button rotates spindles in forward direction with double speed");
-
-            btn.click();
-
-            equal(btn.hasClass("depressed"), false, "clicking the play button again has no effect");
-        });
-		
 
         // Or you might want to do some implementation-specific testing:
 

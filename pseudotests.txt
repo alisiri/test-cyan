@@ -1,0 +1,110 @@
+// PseudoTests
+
+//Test 1: check for manipulate Spindels 
+
+ test("check for function", function(){
+    ok(manipulateSpindles && type of manipulateSpindles === function, "function exists");
+     
+  })
+ 
+  test ("spindles working", function){
+    
+     var spinMethod = "forward-rotation 0s infinite linear";
+	  equal(manipulateSpindles(), ("spindle spin").style.WebkitAnimation = spinMethod, "spindles are still")
+	  
+	  var spinMethod = "forward-rotation 1s infinite linear";
+	  equal(manipulateSpindles(), ("spindle spin").style.WebkitAnimation = spinMethod, "spindles are rotating in forward direction in higher speed")
+	  
+	   var spinMethod = "forward-rotation 2s infinite linear";
+	  equal(manipulateSpindles(), ("spindle spin").style.WebkitAnimation = spinMethod, "spindles are rotating in forward direction in normal speed")
+	  
+	   var spinMethod = "reverse-rotation 1s infinite linear";
+	  equal(manipulateSpindles(), ("spindle spin").style.WebkitAnimation = spinMethod, "spindles are rotating in reverse direction in higher speed")
+	  
+  }
+  
+  
+  //Test 2: check for stateMachineReset
+  
+   test("check for function", function(){
+    ok(stateMachineReset && type of stateMachineReset === function, "function exists");
+     
+  })
+  
+  test("state machine working", function(){
+   
+			//  Test3: check for stateMachineResettesting pause button
+			btn.click();
+			stateMachineReset(pauseButton, true){
+            ok(btn.hasClass("depressed"), "clicking the pause button depresses it");
+            } 
+            btn.click();
+			stateMachineReset(pauseButton, true){
+            equal(btn.hasClass("uppressed"), false, "clicking the pause button again resets it");
+			}
+			
+			 //Test 4: check for stateMachineReset testing stop button, Should reset all buttons when pressed.
+			btn.click(stateMachineReset(stopButton, true));
+			{
+            ok(btnStop.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnPause.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnRecord.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnPlay.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnRewind.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnFastforward.hasClass("uppressed"), "clicking the stop button resets it");
+            } 
+            
+			 //Test 5: check for stateMachineResettest rewind button
+			btn.click(stateMachineReset(rewindButton, true));
+			{
+            ok(btnStop.hasClass("uppressed"), "clicking the rewind has no effect but is enabled");
+			ok(btnPause.hasClass("uppressed"), "clicking the rewind button has no effect for pause and is disabled for press");
+			ok(btnRecord.hasClass("uppressed"), "clicking the rewind button has no effect for record and is disabled for press");
+			ok(btnPlay.hasClass("uppressed"), "clicking the rewind button has no effect for play and is disabled for press");
+			ok(btnRewind.hasClass("depressed"), ""clicking the rewind button has no effect for rewind and is disabled for press");
+			ok(btnFastforward.hasClass("uppressed"), "clicking the fastforward button has no effect for pause and is disabled for press");
+            } 
+			
+			
+  }
+  
+				//test 6: Disabling buttons under conditions,
+
+   
+			btn.click();
+			pauseState(){
+            btn.click(stateMachineReset(rewindButton, true)){
+			ok(btnStop.hasClass("uppressed"), "clicking the stop resets rewind button");
+			ok(btnPause.hasClass("uppressed"), "pause button disabled");
+			ok(btnRecord.hasClass("uppressed"), "record button disabled");
+			ok(btnPlay.hasClass("uppressed"), "play button disabled");
+			ok(btnRewind.hasClass("depressed"), "rewind button pressed");
+			ok(btnFastforward.hasClass("uppressed"), "fast forward button disabled");
+            }
+            } 
+						
+			// testing stop button, Should reset all buttons when pressed.
+			btn.click(manipulateSpindles(stopButton, true));
+			{
+            ok(btnStop.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnPause.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnRecord.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnPlay.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnRewind.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnFastforward.hasClass("uppressed"), "clicking the stop button resets it");
+            } 
+            
+			//test 7:  test play button
+			btn.click(manipulateSpindles(play, true));
+			{
+            ok(btnStop.hasClass("uppressed"), "clicking the stop button resets it");
+			ok(btnPause.hasClass("uppressed"), "pause button enabled");
+			ok(btnRecord.hasClass("uppressed"), "record button enabled");
+			ok(btnPlay.hasClass("depressed"), "play button depressed");
+			ok(btnRewind.hasClass("uppressed"), "record button disabled");
+			ok(btnFastforward.hasClass("uppressed"), "fast forward button disabled");
+            } 
+			
+    
+  
+  )
